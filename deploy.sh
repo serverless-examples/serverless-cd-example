@@ -11,7 +11,7 @@ if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
   if [[ $TRAVIS_BRANCH == 'master' ]]; then
     STAGE="prod"
   elif [[ $TRAVIS_BRANCH == 'develop' ]]; then
-    STAGE="blah"
+    STAGE="dev"
   fi
 fi
 
