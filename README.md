@@ -17,3 +17,8 @@ Creates 2 cloud formation stacks, dev and prod.
 2. `sls function deploy -a` - deploy functions
 3. `sls event deploy -a` - deploy events
 4. `sls endpoint deploy -a` - deploy api gateway endpoints
+
+
+### Testing Deploy locally
+1. `source setup-deploy-envvars.sh`
+2. `.\deploy.sh`

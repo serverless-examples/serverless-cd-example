@@ -7,8 +7,4 @@ env:
 before_install:
   - npm install -g serverless
 
-script:
-  - npm test
-
-after_script:
-  - ./deploy.sh
+script: npm test && ./deploy.sh
