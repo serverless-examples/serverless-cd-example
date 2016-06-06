@@ -35,9 +35,8 @@ function execSls {
   return $status
 }
 
-execSls "project init"
+execSls "meta sync"
 execSls "resources deploy"
 execSls "function deploy -a"
 execSls "event deploy -a"
-cat ./_meta/variables/s-variables-dev-useast1.json
 execSls "endpoint deploy -a --debug"
