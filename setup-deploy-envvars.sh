@@ -1,4 +1,5 @@
 export REGION=us-east-1
+export TRAVIS_TEST_RESULT=0
 export TRAVIS_PULL_REQUEST=false
 export TRAVIS_BRANCH=$(git symbolic-ref --short -q HEAD)
 

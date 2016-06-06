@@ -10,5 +10,5 @@ before_install:
 script:
   - npm test
 
-after_success:
+after_script:
   - ./deploy.sh
