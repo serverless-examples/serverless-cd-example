@@ -1,7 +1,13 @@
 {
   "name": "cd-example",
-  "custom": {},
+  "custom": {
+    "meta": {
+      "name": "cd-example-meta-sync",
+      "region": "us-east-1"
+    }
+  },
   "plugins": [
+    "serverless-meta-sync",
     "serverless-optimizer-plugin"
   ]
 }
