@@ -1,5 +1,8 @@
 # Serverless Continuous Deployment Example (WIP)
+[![Build Status](https://travis-ci.org/johncmckim/serverless-cd-example.svg?branch=master)](https://travis-ci.org/johncmckim/serverless-cd-example)
+
 Continuous Deployment example for the Serverless Framework
+
 
 ### Create project
 1. `sls project create` - create project with inital dev stage
