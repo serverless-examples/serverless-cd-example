@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "4.3"
+env:
+- REGION=us-east-1
+
+before_install:
+  - npm install -g serverless
+
+script:
+  - npm test
+
+after_success:
+  - ./deploy.sh

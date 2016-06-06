@@ -1,0 +1,7 @@
+{
+  "name": "cd-example",
+  "custom": {},
+  "plugins": [
+    "serverless-optimizer-plugin"
+  ]
+}
