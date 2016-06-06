@@ -35,6 +35,7 @@ function execSls {
   return $status
 }
 
+execSls "project init"
 execSls "meta sync"
 execSls "resources deploy"
 execSls "function deploy -a"
