@@ -36,6 +36,7 @@ function execSls {
 }
 
 function deployServerless {
+  execSls "project init -c"
   execSls "resources deploy"
   execSls "function deploy -a"
   execSls "event deploy -a"
