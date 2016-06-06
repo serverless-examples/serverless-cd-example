@@ -24,7 +24,7 @@ fi
 
 # There's probably better ways to do this but it works
 function execSls {
-  cmd="sls $@ -s $STAGE -r $REGION --debug"
+  cmd="sls $@ -s $STAGE -r $REGION"
   echo "Running '$cmd'"
   $cmd
   local status=$?
@@ -35,12 +35,9 @@ function execSls {
   return $status
 }
 
-function deployServerless {
-  execSls "project init -c"
-  execSls "resources deploy"
-  execSls "function deploy -a"
-  execSls "event deploy -a"
-  execSls "endpoint deploy -a"
-}
-
-deployServerless
+execSls "project init"
+execSls "resources deploy"
+execSls "function deploy -a"
+execSls "event deploy -a"
+cat ./_meta/variables/s-variables-dev-useast1.json
+execSls "endpoint deploy -a --debug"
