@@ -24,7 +24,7 @@ fi
 
 # There's probably better ways to do this but it works
 function execSls {
-  cmd="sls $@ -s $STAGE -r $REGION"
+  cmd="sls $@ -s $STAGE -r $REGION --debug"
   echo "Running '$cmd'"
   $cmd
   local status=$?
