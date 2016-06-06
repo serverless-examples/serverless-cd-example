@@ -1,4 +1,5 @@
 #!/bin/bash
+echo 'Starting deploy'
 
 if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
   if [[ $TRAVIS_BRANCH == 'master' ]]; then
@@ -21,7 +22,7 @@ function execSls {
   local status=$?
   if [ $status -ne 0 ]; then
       echo "Error with $1" >&2
-      exit;
+      exit 1;
   fi
   return $status
 }
