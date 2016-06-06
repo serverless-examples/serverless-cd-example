@@ -1,4 +1,4 @@
-# serverless-cd-example
+# Serverless Continuous Deployment Example (WIP)
 Continuous Deployment example for the Serverless Framework
 
 ### Create project
@@ -9,4 +9,8 @@ Continuous Deployment example for the Serverless Framework
 **Result**
 Creates 2 cloud formation stacks, dev and prod.
 
-Deploy project process
+### Deploy project process
+1. `sls resources deploy` - deploy cloud formation
+2. `sls function deploy -a` - deploy functions
+3. `sls event deploy -a` - deploy events
+4. `sls endpoint deploy -a` - deploy api gateway endpoints
