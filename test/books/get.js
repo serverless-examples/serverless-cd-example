@@ -5,6 +5,8 @@ var vows          = require('vows'),
 var booksGetHandler = require('../../src/books/get/handler.js');
 var handler = lambdaWrapper.wrap(booksGetHandler);
 
+process.env.SERVERLESS_STAGE = 'unit-test';
+
 module.exports = vows.describe('The Good Things').addBatch({
   "get book": {
     topic: function() {
@@ -12,6 +14,8 @@ module.exports = vows.describe('The Good Things').addBatch({
     },
     "runs": function (err, result) {
         assert.deepEqual(result, {
+          stage: process.env.SERVERLESS_STAGE,
+          app_version: 1,
           message: 'success'
         });
     }
