@@ -2,24 +2,24 @@ var vows          = require('vows'),
     assert        = require('assert'),
     lambdaWrapper = require('lambda-wrapper');
 
-var booksGetHandler = require('../../src/books/get/handler.js');
-var handler = lambdaWrapper.wrap(booksGetHandler);
+var booksPutHandler = require('../../src/books/put/handler.js');
+var handler = lambdaWrapper.wrap(booksPutHandler);
 
 process.env.SERVERLESS_STAGE = 'unit-test';
 
 module.exports = function(suite) {
   suite.addBatch({
-    "get book": {
+    "put book": {
       topic: function() {
         handler.run({
-          http_method: 'get',
+          http_method: 'put',
         }, this.callback);
       },
       "runs": function (err, result) {
           assert.deepEqual(result, {
             stage: process.env.SERVERLESS_STAGE,
             app_version: 1,
-            method: 'get',
+            method: 'put',
             message: 'success'
           });
       }
