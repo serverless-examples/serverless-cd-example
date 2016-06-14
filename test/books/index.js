@@ -1,2 +1,10 @@
+var vows = require('vows');
 
-module.exports.get = require('./get');
+var suite = vows.describe('Books Get')
+
+require('./get')(suite);
+require('./post')(suite);
+require('./put')(suite);
+require('./delete')(suite);
+
+module.exports.books = suite;

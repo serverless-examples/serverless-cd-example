@@ -1,5 +1,5 @@
 {
-  "name": "books-get",
+  "name": "put",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: cd-example",
   "customName": false,
@@ -14,7 +14,7 @@
   "endpoints": [
     {
       "path": "books",
-      "method": "GET",
+      "method": "PUT",
       "type": "AWS",
       "authorizationType": "none",
       "authorizerFunction": false,

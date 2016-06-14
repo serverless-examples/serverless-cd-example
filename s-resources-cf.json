@@ -48,6 +48,12 @@
           }
         ]
       }
+    },
+    "SnsTopic": {
+      "Type" : "AWS::SNS::Topic",
+      "Properties" : {
+        "DisplayName" : "SNS Topic"
+      }
     }
   },
   "Outputs": {
@@ -58,6 +64,12 @@
           "IamRoleLambda",
           "Arn"
         ]
+      }
+    },
+    "SnsTopicName": {
+      "Description": "TopicName of the Worker SNS Topic",
+      "Value": {
+        "Fn::GetAtt": [ "WorkerSnsTopic", "TopicName" ]
       }
     }
   }
