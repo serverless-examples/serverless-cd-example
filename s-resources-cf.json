@@ -69,7 +69,7 @@
     "SnsTopicName": {
       "Description": "TopicName of the Worker SNS Topic",
       "Value": {
-        "Fn::GetAtt": [ "WorkerSnsTopic", "TopicName" ]
+        "Fn::GetAtt": [ "SnsTopic", "TopicName" ]
       }
     }
   }
