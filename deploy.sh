@@ -24,7 +24,7 @@ fi
 
 # There's probably better ways to do this but it works
 function run {
-  local cmd="$@"
+  cmd="$@"
   echo "Running '$cmd'"
   $cmd
   local status=$?
@@ -36,8 +36,7 @@ function run {
 }
 
 function runSls {
-  local cmd="sls $@ -s $STAGE -r $REGION"
-  exec $cmd
+  exec "sls $@ -s $STAGE -r $REGION"
 }
 
 LOCAL_META_VAR_FILE="_meta/variables/s-variables-$STAGE-$REGION_VAR_NAME.json"
@@ -47,7 +46,7 @@ echo "Will copy metadata from $LOCAL_META_VAR_FILE to $S3_META_VAR_FILE"
 runSls "project init"
 runSls "meta sync" # get new variables
 runSls "resources deploy"
-run "aws s3 cp $LOCAL_META_VAR_FILE $S3_META_VAR_FILE"  # store new variables
+run "aws s3 cp --debug $LOCAL_META_VAR_FILE $S3_META_VAR_FILE"  # store new variables
 runSls "function deploy -a"
 runSls "event deploy -a"
 runSls "endpoint deploy -a"
