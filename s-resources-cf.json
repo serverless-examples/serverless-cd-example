@@ -54,6 +54,10 @@
       "Properties" : {
         "DisplayName" : "SNS Topic"
       }
+    },
+    "BooksSqs": {
+       "Type": "AWS::SQS::Queue",
+       "Properties": { }
     }
   },
   "Outputs": {
@@ -71,6 +75,14 @@
       "Value": {
         "Fn::GetAtt": [ "BookSnsTopic", "TopicName" ]
       }
+    },
+    "BookSnsTopicArn": {
+      "Description": "ARN of the Book SNS Topic",
+      "Value": { "Ref": "BookSnsTopic" }
+    },
+    "BooksSqsArn" : {
+      "Description" : "ARN of the book queue",
+      "Value" : { "Ref" : "BooksSqs" }
     }
   }
 }
