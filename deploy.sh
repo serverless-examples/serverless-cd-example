@@ -15,7 +15,7 @@ if [[ $TRAVIS_PULL_REQUEST == "false" ]]; then
   fi
 fi
 
-echo "Deploying stage $STAGE"
+echo "Deploying stage from branch $TRAVIS_BRANCH to $STAGE"
 
 if [ -z ${STAGE+x} ]; then
   echo "Not deploying changes";
@@ -40,16 +40,14 @@ function runSls {
   exec $cmd
 }
 
-runSls "project init"
-
-runSls "meta sync" # get new variables
-runSls "resources deploy"
-
 LOCAL_META_VAR_FILE="_meta/variables/s-variables-$STAGE-$REGION_VAR_NAME.json"
 S3_META_VAR_FILE="s3://$META_SYNC_BUCKET/serverless/$PROJECT/variables/s-variables-$STAGE-$REGION_VAR_NAME.json"
-echo "Copying metadata from $LOCAL_META_VAR_FILE to $S3_META_VAR_FILE"
-run "aws s3 cp $LOCAL_META_VAR_FILE $S3_META_VAR_FILE"  # store new variables
+echo "Will copy metadata from $LOCAL_META_VAR_FILE to $S3_META_VAR_FILE"
 
+runSls "project init"
+runSls "meta sync" # get new variables
+runSls "resources deploy"
+run "aws s3 cp $LOCAL_META_VAR_FILE $S3_META_VAR_FILE"  # store new variables
 runSls "function deploy -a"
 runSls "event deploy -a"
 runSls "endpoint deploy -a"

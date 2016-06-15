@@ -10,11 +10,11 @@
   },
   "requestTemplate": {
     "application/json": {
-      "http_method" : "$context.httpMethod",
+      "http_method": "$context.httpMethod",
       "id": "$input.params('id')",
       "body": "$input.json('$')",
-      "pathParams" : "$input.params().path",
-      "queryParams" : "$input.params().querystring"
+      "pathParams": "$input.params().path",
+      "queryParams": "$input.params().querystring"
     }
   },
   "responses": {
