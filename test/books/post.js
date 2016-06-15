@@ -5,14 +5,15 @@ var vows          = require('vows'),
 var booksPostHandler = require('../../src/books/post/handler.js');
 var handler = lambdaWrapper.wrap(booksPostHandler);
 
-process.env.SERVERLESS_STAGE = 'unit-test';
-
 module.exports = function(suite) {
   suite.addBatch({
     "post book": {
       topic: function() {
         handler.run({
           http_method: 'post',
+          body: {
+            name: 'Shogun'
+          }
         }, this.callback);
       },
       "runs": function (err, result) {

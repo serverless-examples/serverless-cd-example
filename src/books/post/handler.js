@@ -1,5 +1,6 @@
 'use strict';
 
+var publishToSns = require('./snsPublish');
 
 module.exports.handler = function(event, context, cb) {
   var message = {
@@ -7,17 +8,11 @@ module.exports.handler = function(event, context, cb) {
     name: event.body.name
   };
 
-  var params = {
-    Message: JSON.stringify(message),
-    TopicArn: process.env.WORKER_SNS_TOPIC_ARN
-  };
-
-  sns.publish(params, function(err, data) {
+  publishToSns(message, process.env.WORKER_SNS_TOPIC_ARN, function(err, data) {
     if (err) {
       console.log(err, err.stack);
-      return context.fail('Unexpected Error')
+      return cb('Unexpected Error')
     } else {
-
       return cb(null, {
         stage: process.env.SERVERLESS_STAGE,
         app_version: 1,
@@ -26,5 +21,4 @@ module.exports.handler = function(event, context, cb) {
       });
     }
   });
-
 };

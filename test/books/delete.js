@@ -5,8 +5,6 @@ var vows          = require('vows'),
 var booksDeleteHandler = require('../../src/books/delete/handler.js');
 var handler = lambdaWrapper.wrap(booksDeleteHandler);
 
-process.env.SERVERLESS_STAGE = 'unit-test';
-
 module.exports = function(suite) {
   suite.addBatch({
     "delete book": {

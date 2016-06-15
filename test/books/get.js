@@ -5,8 +5,6 @@ var vows          = require('vows'),
 var booksGetHandler = require('../../src/books/get/handler.js');
 var handler = lambdaWrapper.wrap(booksGetHandler);
 
-process.env.SERVERLESS_STAGE = 'unit-test';
-
 module.exports = function(suite) {
   suite.addBatch({
     "get book": {
