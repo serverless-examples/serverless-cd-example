@@ -37,7 +37,7 @@ function run {
 
 function runSls {
   slsCmd="sls $@ -s $STAGE -r $REGION"
-  run slsCmd
+  run $slsCmd
 }
 
 LOCAL_META_VAR_FILE="_meta/variables/s-variables-$STAGE-$REGION_VAR_NAME.json"
