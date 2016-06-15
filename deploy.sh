@@ -36,8 +36,9 @@ function execSls {
 }
 
 execSls "project init"
-execSls "meta sync"
+execSls "meta sync" # get new variables
 execSls "resources deploy"
+execSls "meta sync" # store new variables
 execSls "function deploy -a"
 execSls "event deploy -a"
 execSls "endpoint deploy -a"
