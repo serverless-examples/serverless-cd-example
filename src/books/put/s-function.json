@@ -1,5 +1,5 @@
 {
-  "name": "put",
+  "name": "books-put",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: cd-example",
   "customName": false,

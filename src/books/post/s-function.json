@@ -1,5 +1,5 @@
 {
-  "name": "post",
+  "name": "books-post",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: cd-example",
   "customName": false,
