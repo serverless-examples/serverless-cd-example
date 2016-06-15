@@ -1,5 +1,5 @@
 {
-  "name": "put",
+  "name": "books",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: cd-example",
   "customName": false,
@@ -11,20 +11,16 @@
   "custom": {
     "excludePatterns": []
   },
-  "endpoints": [
+  "endpoints": [],
+  "events": [
     {
-      "path": "books",
-      "method": "PUT",
-      "type": "AWS",
-      "authorizationType": "none",
-      "authorizerFunction": false,
-      "apiKeyRequired": false,
-      "requestParameters": {},
-      "requestTemplates": "$${requestTemplate}",
-      "responses": "$${responses}"
+      "name": "book-change",
+      "type": "sns",
+      "config": {
+        "topic": "${BookSnsTopicName}"
+      }
     }
   ],
-  "events": [],
   "environment": "$${functionEnvironment}",
   "vpc": "$${functionVpc}"
 }

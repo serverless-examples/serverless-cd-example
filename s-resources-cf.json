@@ -49,7 +49,7 @@
         ]
       }
     },
-    "SnsTopic": {
+    "BookSnsTopic": {
       "Type" : "AWS::SNS::Topic",
       "Properties" : {
         "DisplayName" : "SNS Topic"
@@ -66,10 +66,10 @@
         ]
       }
     },
-    "SnsTopicName": {
-      "Description": "TopicName of the Worker SNS Topic",
+    "BookSnsTopicName": {
+      "Description": "TopicName of the Book SNS Topic",
       "Value": {
-        "Fn::GetAtt": [ "SnsTopic", "TopicName" ]
+        "Fn::GetAtt": [ "BookSnsTopic", "TopicName" ]
       }
     }
   }
