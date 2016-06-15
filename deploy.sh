@@ -23,8 +23,8 @@ if [ -z ${STAGE+x} ]; then
 fi
 
 # There's probably better ways to do this but it works
-function execSls {
-  cmd="sls $@ -s $STAGE -r $REGION"
+function run {
+  local cmd="$@"
   echo "Running '$cmd'"
   $cmd
   local status=$?
@@ -35,10 +35,15 @@ function execSls {
   return $status
 }
 
-execSls "project init"
-execSls "meta sync" # get new variables
-execSls "resources deploy"
-execSls "meta sync" # store new variables
-execSls "function deploy -a"
-execSls "event deploy -a"
-execSls "endpoint deploy -a"
+function runSls {
+  local cmd="sls $@ -s $STAGE -r $REGION"
+  exec $cmd
+}
+
+runSls "project init"
+runSls "meta sync" # get new variables
+runSls "resources deploy"
+run "aws s3 cp _meta/variables/s-variables-$STAGE-$REGION.json s3://$META_SYNC_BUCKET/serverless/$PROJECT/variables/s-variables-$STAGE-$REGION_VAR_NAME"  # store new variables
+runSls "function deploy -a"
+runSls "event deploy -a"
+runSls "endpoint deploy -a"
