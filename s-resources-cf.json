@@ -57,7 +57,9 @@
     },
     "BooksSqs": {
        "Type": "AWS::SQS::Queue",
-       "Properties": { }
+       "Properties": {
+         "DelaySeconds": 10
+       }
     }
   },
   "Outputs": {
