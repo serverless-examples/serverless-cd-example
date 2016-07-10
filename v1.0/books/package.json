@@ -1,0 +1,24 @@
+{
+  "name": "cd-example",
+  "version": "0.0.1",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "scripts": {
+    "test": "vows test/* --spec"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.4.0"
+  },
+  "devDependencies": {
+    "lambda-wrapper": "0.0.6",
+    "serverless-meta-sync": "^0.1.0",
+    "serverless-optimizer-plugin": "^2.5.1",
+    "vows": "^0.8.1"
+  }
+}

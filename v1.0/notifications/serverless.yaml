@@ -1,0 +1,5 @@
+service: notifications
+provider: aws
+functions:
+    hello:
+        handler: handler.hello
