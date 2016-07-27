@@ -1,4 +1,4 @@
-service: books
+service: cd-example-books
 provider: aws
 runtime: node4.3
 package:

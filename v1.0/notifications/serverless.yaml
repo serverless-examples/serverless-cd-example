@@ -1,5 +1,6 @@
-service: notifications
+service: cd-example-notifications
 provider: aws
+runtime: node4.3
 functions:
-    hello:
-        handler: handler.hello
+    books:
+        books: books.handler
