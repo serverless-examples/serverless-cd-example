@@ -8,4 +8,4 @@ functions:
   books:
     handler: src/books.handler
     events:
-      - sns: 'BookSnsTopic'
+      - sns: ${workerSnsTopic}
