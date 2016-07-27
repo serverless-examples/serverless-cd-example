@@ -5,6 +5,7 @@ node_js:
 env:
   global:
     - AWS_REGION=us-east-1
+    - SLS_DEBUG=true
 
 before_install:
   - npm i -g serverless@1.0.0-alpha.2

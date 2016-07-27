@@ -3,4 +3,4 @@ provider: aws
 runtime: node4.3
 functions:
     books:
-        books: books.handler
+        books: src/books.handler
