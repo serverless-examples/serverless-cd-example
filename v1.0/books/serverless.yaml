@@ -29,9 +29,3 @@ functions:
       - http:
           path: ${booksPath}
           method: DELETE
-resources:
-  Resources:
-    BookSnsTopic:
-      Type: "AWS::SNS::Topic"
-      Properties:
-        DisplayName: "SNS Topic"
