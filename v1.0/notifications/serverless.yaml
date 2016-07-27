@@ -1,6 +1,8 @@
 service: cd-example-notifications
 provider: aws
 runtime: node4.3
+package:
+  include: src
 functions:
-    books:
-        books: src/books.handler
+  books:
+    handler: src/books.handler
