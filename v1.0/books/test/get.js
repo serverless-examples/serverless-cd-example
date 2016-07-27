@@ -3,7 +3,9 @@ var vows          = require('vows'),
     lambdaWrapper = require('lambda-wrapper');
 
 var booksGetHandler = require('../src/books.js');
-var handler = lambdaWrapper.wrap(booksGetHandler);
+var handler = lambdaWrapper.wrap(booksGetHandler, {
+  handler: 'get'
+});
 
 module.exports = function(suite) {
   suite.addBatch({

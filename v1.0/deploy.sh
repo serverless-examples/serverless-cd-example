@@ -1,10 +1,21 @@
 #!/bin/bash
 set -e
 
+WORING_DIR=$(pwd)
+BOOKS_DIR="$WORING_DIR/books"
+NOTIFICATIONS_DIR="$WORING_DIR/notifications"
+
 if [[ $TRAVIS_TEST_RESULT == 1 ]]; then
   echo 'Skipping deploy due to broken build';
   exit 1;
 fi
+
+echo 'Running tests'
+cd $BOOKS_DIR
+npm test
+
+cd $NOTIFICATIONS_DIR
+npm test
 
 echo 'Starting deploy'
 
@@ -22,3 +33,11 @@ if [ -z ${STAGE+x} ]; then
   echo "Not deploying changes";
   exit 0;
 fi
+
+echo 'Deploying books'
+cd $BOOKS_DIR
+sls deploy -s $STAGE
+
+echo 'Deploying notifications'
+cd $NOTIFICATIONS_DIR
+sls deploy -s $STAGE

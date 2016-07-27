@@ -4,16 +4,11 @@ node_js:
 
 env:
   global:
-    - PROJECT=cd-example
-    - META_SYNC_BUCKET=cd-example-meta-sync
-    - REGION=us-east-1
-    - REGION_VAR_NAME=useast1
+    - AWS_REGION=us-east-1
     - secure: r73ZcjhS0Xc7COtRSk6c9JsAKxt1ANi428Hdhj0to7TIPnY/+Qpb4QNpb56tRZ9aCCJzkd4DvmDECBJGgpzrRHDHLh4GJPr5Vhb0j4zMeC6+MA/caX4vs8Ro7DiwI+IVrTGqVgEqqvqTqmYEEl74LzgqjzwfvCUZzHeNrbmN4Ohw0var+xH53U1EYWTOAXOwcKi2G7N3kEmIsOPWgPSCJ7m1VD/OIxwCDfmqKQoLULSCo2JT8rX/N80jILm/HGq/rWl88YB24RtuIKbq/YTUvlpQpZFcERY77plOv+U/+Ae8u5H0NRW1tFTOiuma7blkeT1W+arQXn4SIGJPHoGFOCzoW46cDkIMOVQdAKmSgwCiwhEBPCziThjdxIk80UX9NzeAjKEOtj5HoAZpTIXlEFzN143NGZ6AHjc4F7UhSsyoN1t79edqBFlnJsyTqcNVM1KYD9PzkYK1BLa9uHQ3JX2gTfBzxCXqrGFeZAhkYQDQwwRrGjYinpz9kwjKo3uKA/ewVkk+3MBH5eVIGrZl6G02l7axKzMypvwfvhmOK9H++0iOOPwKH233zRC8Y3QO2oiKvfcIWVwXurKuP8s27pas60dyYBSLwv0sN6Ct0GoFtArKcjmMAKJbnYnOBFoum2QbLu+H1BNvWRH9uBqKvwwDoo1NrjYtYqVK1aCmzV4=
     - secure: TyY0hfPmQDFZ2peQ5QleTKyy4USrqRoMSPPt0nE6ZJ1xqZRL/ojP5f8p9qo2A2wjaIvKBuuPKUZkVP9o6HFOzj0RbtNVdKnssTjKJyghhx1BcMXrSFc7uEiqIo+MVDc0x+Qti4sUNwyu5mdPD8s9VmVK+OviPGsdFOIzR03mGMIclAOAhnFwgQPNlQ6OY8rsyr6/n6ya2cj8F2atA/wqRIRmLeHp0v//RZnG0FHBGjBAq2Kbip/e8IpnpVCJ5CmWZXJ7GCEeLJ1SsCXQ0a6flwNSK8HDjJfYjYHEuAl0CK5YtFpfVZGoQ8+Zl7qAagO7vm5DeI/2uSpvIfpmYq6fheSYUI7E6EW9TWeG3DkL8S0ZKmQZhAgqmkVOqYwdty6Qra8+uoIi07g5Aj1gOb5H1jGBBEo9tWgURkd/bzXPVlFxr/WlUFDYLOyZcyjxeKCXotJ03Ox20/E59ORz5dd822akYWf94yOXFeici/AIfwLID4fxw3XQH/W1V69NmigUJynL7ymWYarWeZ+9gcAqHHCgTK7Q+3ARg3Y2Szy5hl2zqzMV8q6UfavsigX2KXnFpEF48sclEWcBU91Bp5xwZArSeqnwtbDwL1G1OYpxX5KwtY62iXX/BMHpn/4Wxy8urEQLHha7tmJWhExlhuIPtbLtD76R515W9A9/OrIq9p4=
 
 before_install:
-  - pip install --user awscli
-  - export PATH=$PATH:$HOME/.local/bin
-  - npm install -g serverless
+  - npm install -g serverless@alpha.2
 
-script: npm test && ./deploy.sh
+script: cd v1.0 && ./deploy.sh

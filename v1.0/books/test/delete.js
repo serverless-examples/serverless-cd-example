@@ -3,7 +3,9 @@ var vows          = require('vows'),
     lambdaWrapper = require('lambda-wrapper');
 
 var booksDeleteHandler = require('../src/books.js');
-var handler = lambdaWrapper.wrap(booksDeleteHandler);
+var handler = lambdaWrapper.wrap(booksDeleteHandler, {
+  handler: 'delete'
+});
 
 module.exports = function(suite) {
   suite.addBatch({
