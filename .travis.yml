@@ -9,6 +9,6 @@ env:
     - secure: TyY0hfPmQDFZ2peQ5QleTKyy4USrqRoMSPPt0nE6ZJ1xqZRL/ojP5f8p9qo2A2wjaIvKBuuPKUZkVP9o6HFOzj0RbtNVdKnssTjKJyghhx1BcMXrSFc7uEiqIo+MVDc0x+Qti4sUNwyu5mdPD8s9VmVK+OviPGsdFOIzR03mGMIclAOAhnFwgQPNlQ6OY8rsyr6/n6ya2cj8F2atA/wqRIRmLeHp0v//RZnG0FHBGjBAq2Kbip/e8IpnpVCJ5CmWZXJ7GCEeLJ1SsCXQ0a6flwNSK8HDjJfYjYHEuAl0CK5YtFpfVZGoQ8+Zl7qAagO7vm5DeI/2uSpvIfpmYq6fheSYUI7E6EW9TWeG3DkL8S0ZKmQZhAgqmkVOqYwdty6Qra8+uoIi07g5Aj1gOb5H1jGBBEo9tWgURkd/bzXPVlFxr/WlUFDYLOyZcyjxeKCXotJ03Ox20/E59ORz5dd822akYWf94yOXFeici/AIfwLID4fxw3XQH/W1V69NmigUJynL7ymWYarWeZ+9gcAqHHCgTK7Q+3ARg3Y2Szy5hl2zqzMV8q6UfavsigX2KXnFpEF48sclEWcBU91Bp5xwZArSeqnwtbDwL1G1OYpxX5KwtY62iXX/BMHpn/4Wxy8urEQLHha7tmJWhExlhuIPtbLtD76R515W9A9/OrIq9p4=
 
 before_install:
-  - npm install -g serverless@alpha.2
+  - npm install -g serverless@1.0.0-alpha.2
 
 script: cd v1.0 && ./deploy.sh
