@@ -10,12 +10,15 @@ if [[ $TRAVIS_TEST_RESULT == 1 ]]; then
   exit 1;
 fi
 
-echo 'Running tests'
-cd $BOOKS_DIR
-npm test
+function installAndTest {
+  cd "$@"
+  npm i
+  npm test
+}
 
-cd $NOTIFICATIONS_DIR
-npm test
+echo 'Running tests'
+installAndTest $BOOKS_DIR
+installAndTest $NOTIFICATIONS_DIR
 
 echo 'Starting deploy'
 
