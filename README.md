@@ -1,4 +1,4 @@
-# Serverless Continuous Deployment Example (WIP)
+# Serverless Continuous Deployment Example
 [![Build Status](https://travis-ci.org/johncmckim/serverless-cd-example.svg?branch=master)](https://travis-ci.org/johncmckim/serverless-cd-example)
 
 Continuous Deployment example for the Serverless Framework
@@ -27,3 +27,6 @@ Creates 2 cloud formation stacks, dev and prod.
 ### Testing Deploy locally
 1. `source setup-deploy-envvars.sh`
 2. `.\deploy.sh`
+
+## Serverless 1.0@alpha (WIP)
+1. `sls deploy`
