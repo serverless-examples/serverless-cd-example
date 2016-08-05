@@ -1,0 +1,26 @@
+{
+  "name": "notifications-books",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: cd-example",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 6,
+  "memorySize": 128,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [],
+  "events": [
+    {
+      "name": "book-change",
+      "type": "sns",
+      "config": {
+        "topic": "${bookSnsTopicName}"
+      }
+    }
+  ],
+  "environment": "$${functionEnvironment}",
+  "vpc": "$${functionVpc}"
+}

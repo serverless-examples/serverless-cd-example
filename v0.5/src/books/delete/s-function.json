@@ -1,0 +1,30 @@
+{
+  "name": "books-delete",
+  "runtime": "nodejs4.3",
+  "description": "Serverless Lambda function for project: cd-example",
+  "customName": false,
+  "customRole": false,
+  "handler": "handler.handler",
+  "timeout": 6,
+  "memorySize": 128,
+  "authorizer": {},
+  "custom": {
+    "excludePatterns": []
+  },
+  "endpoints": [
+    {
+      "path": "books",
+      "method": "DELETE",
+      "type": "AWS",
+      "authorizationType": "none",
+      "authorizerFunction": false,
+      "apiKeyRequired": false,
+      "requestParameters": {},
+      "requestTemplates": "$${requestTemplate}",
+      "responses": "$${responses}"
+    }
+  ],
+  "events": [],
+  "environment": "$${functionEnvironment}",
+  "vpc": "$${functionVpc}"
+}

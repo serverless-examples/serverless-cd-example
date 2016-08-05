@@ -12,7 +12,9 @@
   "scripts": {
     "test": "vows test/* --spec"
   },
-  "dependencies": {},
+  "dependencies": {
+    "aws-sdk": "^2.4.0"
+  },
   "devDependencies": {
     "lambda-wrapper": "0.0.6",
     "serverless-meta-sync": "^0.1.0",

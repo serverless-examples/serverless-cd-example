@@ -1,0 +1,12 @@
+service: cd-example-notifications
+provider:
+  name: aws
+  runtime: nodejs4.3
+package:
+  include:
+    - src
+functions:
+  books:
+    handler: src/books.handler
+    events:
+      - sns: 'book-change'

@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '4.3'
+
+env:
+  global:
+    - PROJECT=cd-example
+    - META_SYNC_BUCKET=cd-example-meta-sync
+    - REGION=us-east-1
+    - REGION_VAR_NAME=useast1
+    - secure: xxxx_REDACTED
+    - secure: xxxx_REDACTED
+
+before_install:
+  - pip install --user awscli
+  - export PATH=$PATH:$HOME/.local/bin
+  - npm install -g serverless
+
+script: npm test && ./deploy.sh

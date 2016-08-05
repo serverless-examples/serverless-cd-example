@@ -1,0 +1,32 @@
+service: cd-example-books
+provider:
+  name: aws
+  runtime: nodejs4.3
+package:
+  include:
+    - src
+functions:
+  get:
+    handler: src/books.get
+    events:
+      - http:
+          path: ${booksPath}
+          method: GET
+  put:
+    handler: src/books.put
+    events:
+      - http:
+          path: ${booksPath}
+          method: PUT
+  post:
+    handler: src/books.post
+    events:
+      - http:
+          path: ${booksPath}
+          method: POST
+  delete:
+    handler: src/books.delete
+    events:
+      - http:
+          path: ${booksPath}
+          method: DELETE

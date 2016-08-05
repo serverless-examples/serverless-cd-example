@@ -1,0 +1,23 @@
+{
+  "name": "cd-example-books",
+  "version": "0.0.1",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "scripts": {
+    "test": "IS_UNIT_TEST=true SERVERLESS_STAGE=unit-test vows test/* --spec"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.4.0"
+  },
+  "devDependencies": {
+    "lambda-wrapper": "0.1.1",
+    "mock-aws": "^1.2.3",
+    "vows": "^0.8.1"
+  }
+}
