@@ -1,6 +1,7 @@
 service: cd-example-notifications
-provider: aws
-runtime: nodejs4.3
+provider:
+  name: aws
+  runtime: nodejs4.3
 package:
   include:
     - src
