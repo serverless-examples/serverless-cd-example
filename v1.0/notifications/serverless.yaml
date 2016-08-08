@@ -9,4 +9,4 @@ functions:
   books:
     handler: src/books.handler
     events:
-      - sns: 'book-change'
+      - sns: ${bookSnsTopicName}
