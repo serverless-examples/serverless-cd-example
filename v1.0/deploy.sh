@@ -37,10 +37,10 @@ if [ -z ${STAGE+x} ]; then
   exit 0;
 fi
 
-echo 'Deploying books'
+echo "Deploying books to $STAGE"
 cd $BOOKS_DIR
-sls deploy -s $STAGE
+sls deploy --stage $STAGE
 
-echo 'Deploying notifications'
+echo "Deploying notifications to $STAGE"
 cd $NOTIFICATIONS_DIR
-sls deploy -s $STAGE
+sls deploy --stage $STAGE
